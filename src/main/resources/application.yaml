@@ -2,9 +2,9 @@ spring:
   application:
     name: futuraTwo
   datasource:
-    url: jdbc:postgresql://localhost:5432/futura2
-    username: postgres
-    password: password
+    url: ${DATABASE_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
@@ -18,5 +18,5 @@ server:
   port: ${PORT:8080}
 
 jwt:
-  secret: X9#mK2$pL8@nQ5&rT1*wY4^uI7!oP3sA
-  expiration: 86400000
+  secret: ${JWT_SECRET}
+  expiration: ${JWT_EXPIRATION:86400000}
